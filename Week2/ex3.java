@@ -14,10 +14,37 @@ public class ex3 {
         return s;
     }
 
+    // Big O notation O(log n)
+    public static double power(double x, int y) {
+        double temp;
+        if (y == 0) return 1;
 
-    // Big O notation O(1)
-    public static double pow (double x, double n) {
-        return Math.pow(x, n);
+        temp = power(x, y / 2);
+
+        if (y % 2 == 0)
+            return temp * temp;
+        else {
+            if (y > 0)
+                return x * temp * temp;
+            else
+                return (temp * temp) / x;
+        }
+
+        //        double result = 1;
+//
+//        while (n != 0) {
+//            if (n > 0) {
+//                result *= x;
+//                --n;
+//            }
+//
+//            if (n < 0) {
+//                result /= x;
+//                ++n;
+//            }
+//        }
+
+//        return result;
     }
 
     public static void main(String[] args) {
@@ -33,15 +60,15 @@ public class ex3 {
 
         long startTime, stopTime, runTime;
         startTime = System.currentTimeMillis();
-        System.out.println("The value of (" + x + ")^" + n + " is: " + Pow(x,n));
-        stopTime=System.currentTimeMillis();
+        System.out.println("The value of (" + x + ")^" + n + " is: " + Pow(x, n));
+        stopTime = System.currentTimeMillis();
         runTime = stopTime - startTime;
         System.out.println("First algorithm take: " + runTime + " milliseconds");
         System.out.println();
 
         startTime = System.currentTimeMillis();
-        System.out.println("The value of (" + x + ")^" + n + " is: " + pow(x,n));
-        stopTime=System.currentTimeMillis();
+        System.out.println("The value of (" + x + ")^" + n + " is: " + power(x, n));
+        stopTime = System.currentTimeMillis();
         runTime = stopTime - startTime;
         System.out.println("Second algorithm take: " + runTime + " milliseconds");
     }
