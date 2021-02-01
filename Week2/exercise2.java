@@ -3,22 +3,7 @@ package Week2;
 import java.util.Scanner;
 import java.util.Random;
 
-public class ex2 {
-
-    // Big O notation O(n^2)
-    public static double Evaluate(double[] a, double x) {
-        double s = 0;
-        for (int i = 0; i < a.length; i++) {
-            double p = 1;
-
-            for (int k = a.length - 1; k > i; k--)
-                p = p * x;
-
-            s = s + a[i] * p;
-        }
-        return s;
-    }
-
+public class exercise2 {
 
     // Big O notation O(n)
     public static double evaluate(double[] a, double x) {
@@ -65,18 +50,6 @@ public class ex2 {
         System.out.print("Please enter the value of x: ");
         x = scanner.nextDouble();
 
-        long startTime, stopTime, runTime;
-        startTime = System.currentTimeMillis();
-        System.out.println("The value P(" + x + ") = " + Evaluate(c, x));
-        stopTime = System.currentTimeMillis();
-        runTime = stopTime - startTime;
-        System.out.println("First algorithm take: " + runTime + " milliseconds");
-        System.out.println();
-
-        startTime = System.currentTimeMillis();
         System.out.println("The value P(" + x + ") = " + evaluate(c, x));
-        stopTime = System.currentTimeMillis();
-        runTime = stopTime - startTime;
-        System.out.println("Second algorithm take: " + runTime + " milliseconds");
     }
 }

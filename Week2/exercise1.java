@@ -3,7 +3,7 @@ package Week2;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ex1 {
+public class exercise1 {
 
     // Big O notation O(log n)
     public static int binarySearch(int[] arr, int left, int right, int x) {
@@ -18,15 +18,6 @@ public class ex1 {
 
             return binarySearch(arr, mid + 1, right, x);
         }
-        return -1;
-    }
-
-
-    // Big O notation O(n)
-    public static int Search(int[] a, int m) {
-        for (int i = 0; i < a.length; i++)
-            if (a[i] == m)
-                return i;
         return -1;
     }
 
@@ -63,18 +54,6 @@ public class ex1 {
         System.out.print("Enter number to search: ");
         int x = input.nextInt();
 
-        long startTime, stopTime, runTime;
-        startTime = System.currentTimeMillis();
         System.out.println("Result: " + binarySearch(sortedArr, 0, n-1, x));
-        stopTime = System.currentTimeMillis();
-        runTime = stopTime - startTime;
-        System.out.println("First algorithm take: " + runTime + " milliseconds");
-        System.out.println();
-
-        startTime = System.currentTimeMillis();
-        System.out.println("Result: " + Search(sortedArr, x));
-        stopTime = System.currentTimeMillis();
-        runTime = stopTime - startTime;
-        System.out.println("Second algorithm take: " + runTime + " milliseconds");
     }
 }
